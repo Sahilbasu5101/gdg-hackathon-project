@@ -67,7 +67,7 @@ const Login = () => {
                         <div className="size-10 md:size-11 bg-primary rounded-xl flex items-center justify-center shadow-xl shadow-primary/30 ring-1 ring-white/10">
                             <span className="material-symbols-outlined text-white text-[24px] md:text-[26px]">hub</span>
                         </div>
-                        <h2 className="text-white text-xl md:text-2xl font-black leading-tight tracking-tighter font-display uppercase drop-shadow-lg">Student Hub</h2>
+                        <h2 className="text-white text-xl md:text-2xl font-black leading-tight tracking-tighter font-display uppercase drop-shadow-lg">Carrier Tech</h2>
                     </div>
                     <div className="hidden md:flex gap-4">
                         <button className="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-6 bg-white/5 border border-white/10 text-white text-sm font-bold hover:bg-white/10 transition-all backdrop-blur-md">
@@ -160,7 +160,7 @@ const Login = () => {
                     <div className="flex items-center gap-2">
                         <span className="material-symbols-outlined text-white/30 text-[20px]">hub</span>
                         <div className="text-white/40 text-[10px] tracking-[0.3em] uppercase font-black">
-                            © 2024 Universal Student Hub
+                            © 2024 Universal Carrier Tech
                         </div>
                     </div>
                     <div className="flex gap-6 md:gap-8 flex-wrap justify-center">

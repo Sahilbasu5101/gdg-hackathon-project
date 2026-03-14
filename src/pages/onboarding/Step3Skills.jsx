@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
-import { doc, updateDoc } from 'firebase/firestore';
+import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
 
 const Step3Skills = () => {
@@ -50,10 +50,12 @@ const Step3Skills = () => {
         setIsLoading(true);
         try {
             const userRef = doc(db, "users", user.uid);
-            await updateDoc(userRef, {
-                "onboarding.skills": skills,
-                "onboarding.verifiedProblemSolver": puzzleSolved
-            });
+            await setDoc(userRef, {
+                onboarding: {
+                    skills: skills,
+                    verifiedProblemSolver: puzzleSolved
+                }
+            }, { merge: true });
             navigate('/onboarding/step-4');
         } catch (error) {
             console.error("Error saving step 3:", error);

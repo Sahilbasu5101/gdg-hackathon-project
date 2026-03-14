@@ -14,29 +14,35 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-            setUser(currentUser);
-            if (currentUser) {
-                // Fetch user data from Firestore
-                const docRef = doc(db, "users", currentUser.uid);
-                const docSnap = await getDoc(docRef);
+            try {
+                setUser(currentUser);
+                if (currentUser) {
+                    // Fetch user data from Firestore
+                    const docRef = doc(db, "users", currentUser.uid);
+                    const docSnap = await getDoc(docRef);
 
-                if (docSnap.exists()) {
-                    setUserData(docSnap.data());
+                    if (docSnap.exists()) {
+                        setUserData(docSnap.data());
+                    } else {
+                        // Initialize new user if not exists
+                        const initialData = {
+                            email: currentUser.email,
+                            displayName: currentUser.displayName,
+                            photoURL: currentUser.photoURL,
+                            createdAt: new Date().toISOString(),
+                        };
+                        await setDoc(docRef, initialData);
+                        setUserData(initialData);
+                    }
                 } else {
-                    // Initialize new user if not exists
-                    const initialData = {
-                        email: currentUser.email,
-                        displayName: currentUser.displayName,
-                        photoURL: currentUser.photoURL,
-                        createdAt: new Date().toISOString(),
-                    };
-                    await setDoc(docRef, initialData);
-                    setUserData(initialData);
+                    setUserData(null);
                 }
-            } else {
-                setUserData(null);
+            } catch (error) {
+                console.error("Error fetching user data in AuthContext:", error);
+                // Optionally handle the error (e.g. by clearing user data)
+            } finally {
+                setLoading(false);
             }
-            setLoading(false);
         });
 
         return unsubscribe;

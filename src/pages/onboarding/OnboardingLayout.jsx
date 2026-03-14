@@ -25,7 +25,7 @@ const OnboardingLayout = () => {
                     <div className="size-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
                         <span className="material-symbols-outlined text-[20px]">hub</span>
                     </div>
-                    <span className="font-bold text-lg tracking-tight text-gray-900">Student Hub</span>
+                    <span className="font-bold text-lg tracking-tight text-gray-900">Carrier Tech</span>
                 </div>
 
                 <div className="hidden md:flex items-center gap-3">

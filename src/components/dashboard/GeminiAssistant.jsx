@@ -30,7 +30,7 @@ const GeminiAssistant = () => {
         if (lowerText.includes('project')) return "How about building a 'Task Management App' with drag-and-drop features, or a 'Weather Dashboard' using a public API? Both are great for your portfolio!";
         if (lowerText.includes('react')) return "React is all about components. Try explaining 'Props vs State' or 'useEffect' hooks to me to test your knowledge!";
         if (lowerText.includes('quiz')) return "Sure! Question 1: What is the virtual DOM in React and how does it improve performance?";
-        return "That's an interesting topic! I'm currently in demo mode, but I can help you navigate the Student Hub or give general advice on your career path.";
+        return "That's an interesting topic! I'm currently in demo mode, but I can help you navigate the Carrier Tech or give general advice on your career path.";
     };
 
     const scrollToBottom = () => {

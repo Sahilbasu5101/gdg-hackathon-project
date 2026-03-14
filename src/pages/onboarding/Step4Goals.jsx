@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
-import { doc, updateDoc } from 'firebase/firestore';
+import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
 
 const Step4Goals = () => {
@@ -46,11 +46,13 @@ const Step4Goals = () => {
         setIsLoading(true);
         try {
             const userRef = doc(db, "users", user.uid);
-            await updateDoc(userRef, {
-                "onboarding.goalsShortTerm": shortTerm,
-                "onboarding.goalLongTerm": longTerm,
-                "onboarding.timeCommitment": timeCommitment
-            });
+            await setDoc(userRef, {
+                onboarding: {
+                    goalsShortTerm: shortTerm,
+                    goalLongTerm: longTerm,
+                    timeCommitment: timeCommitment
+                }
+            }, { merge: true });
             navigate('/onboarding/step-5');
         } catch (error) {
             console.error("Error saving step 4:", error);

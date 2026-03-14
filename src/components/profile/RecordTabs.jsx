@@ -50,7 +50,7 @@ const RecordTabs = () => {
     const [projects, setProjects] = useState([
         {
             id: 1,
-            title: 'Student Hub Platform',
+            title: 'Carrier Tech Platform',
             description: 'Comprehensive dashboard for student progression tracking.',
             status: 'verified',
             date: '2024-11',

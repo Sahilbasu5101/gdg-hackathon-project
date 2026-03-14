@@ -36,5 +36,17 @@
     "globals": "^16.5.0",
     "postcss": "^8.5.6",
     "vite": "^7.2.4"
-  }
+  },
+  "description": "**Universal Student Hub** is a premium, dark-themed React application designed to empower students by streamlining their academic journey and career development. It serves as a central platform for managing profiles, tracking coding achievements, optimizing resumes, and leveraging AI for personalized support.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sahilbasu5101/gdg-hackathon-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sahilbasu5101/gdg-hackathon-project/issues"
+  },
+  "homepage": "https://github.com/Sahilbasu5101/gdg-hackathon-project#readme"
 }

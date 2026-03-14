@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
-import { doc, updateDoc } from 'firebase/firestore';
+import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
 
 const Step1Identity = () => {
@@ -36,13 +36,15 @@ const Step1Identity = () => {
         setIsLoading(true);
         try {
             const userRef = doc(db, "users", user.uid);
-            await updateDoc(userRef, {
-                "onboarding.university": formData.university,
-                "onboarding.course": formData.course,
-                "onboarding.currentYear": formData.currentYear,
+            await setDoc(userRef, {
+                onboarding: {
+                    university: formData.university,
+                    course: formData.course,
+                    currentYear: formData.currentYear
+                },
                 // We might want to update the root displayName too if changed
                 displayName: formData.displayName
-            });
+            }, { merge: true });
             navigate('/onboarding/step-2');
         } catch (error) {
             console.error("Error saving step 1:", error);

@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
-import { doc, updateDoc } from 'firebase/firestore';
+import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
 
 const Step5Community = () => {
@@ -36,11 +36,13 @@ const Step5Community = () => {
         setIsLoading(true);
         try {
             const userRef = doc(db, "users", user.uid);
-            await updateDoc(userRef, {
-                "onboarding.preferences": preferences,
-                "onboarding.collabStyle": collabStyle,
-                "onboardingCompleted": true // Mark onboarding as done
-            });
+            await setDoc(userRef, {
+                onboarding: {
+                    preferences: preferences,
+                    collabStyle: collabStyle
+                },
+                onboardingCompleted: true // Mark onboarding as done
+            }, { merge: true });
             navigate('/dashboard');
         } catch (error) {
             console.error("Error saving step 5:", error);

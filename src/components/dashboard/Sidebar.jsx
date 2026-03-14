@@ -4,6 +4,8 @@ const Sidebar = () => {
     const links = [
         { icon: 'home', label: 'Home', path: '/dashboard' },
         { icon: 'person', label: 'Profile', path: '/dashboard/profile' },
+        { icon: 'bolt', label: 'AI Helper', path: '/dashboard/ai-helper' },
+        { icon: 'emoji_events', label: 'Challenges', path: '/dashboard/challenges' },
         { icon: 'explore', label: 'Career Navigator', path: '/dashboard/career-navigator' },
         { icon: 'map', label: 'Roadmap', path: '/dashboard/roadmap' },
         { icon: 'groups', label: 'Community', path: '/dashboard/community' },
@@ -18,7 +20,7 @@ const Sidebar = () => {
                     <span className="material-symbols-outlined text-white text-[20px]">hub</span>
                 </div>
                 <div>
-                    <h1 className="text-lg font-[900] tracking-tight text-gray-900 leading-none">Student Hub</h1>
+                    <h1 className="text-lg font-[900] tracking-tight text-gray-900 leading-none">Carrier Tech</h1>
                     <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mt-1">Career Navigator</p>
                 </div>
             </div>

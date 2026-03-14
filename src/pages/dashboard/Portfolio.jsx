@@ -43,7 +43,7 @@ const Portfolio = () => {
 
                 {/* Footer */}
                 <div className="pt-12 text-center">
-                    <p className="text-[10px] font-bold text-gray-300 uppercase tracking-[0.3em]">Student Hub Verification System • Powered by AI Guidance Engine</p>
+                    <p className="text-[10px] font-bold text-gray-300 uppercase tracking-[0.3em]">Carrier Tech Verification System • Powered by AI Guidance Engine</p>
                 </div>
             </div>
         </div>

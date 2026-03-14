@@ -9,6 +9,8 @@ import Step5Community from './pages/onboarding/Step5Community';
 import DashboardLayout from './pages/dashboard/DashboardLayout';
 import DashboardHome from './pages/dashboard/DashboardHome';
 import Profile from './pages/dashboard/Profile';
+import AIHelper from './pages/dashboard/AIHelper';
+import Challenges from './pages/dashboard/Challenges';
 import Portfolio from './pages/dashboard/Portfolio';
 import CareerNavigator from './pages/dashboard/CareerNavigator';
 import Community from './pages/dashboard/Community';
@@ -38,6 +40,8 @@ function App() {
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<DashboardHome />} />
             <Route path="profile" element={<Profile />} />
+            <Route path="ai-helper" element={<AIHelper />} />
+            <Route path="challenges" element={<Challenges />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="career-navigator" element={<CareerNavigator />} />
             <Route path="community" element={<Community />} />
